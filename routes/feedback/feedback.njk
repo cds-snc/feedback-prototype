@@ -1,0 +1,21 @@
+{% extends "base.njk" %}
+
+{% block content %}
+
+    <h1>Feedback</h1>
+
+    <div>
+        <p>
+            Please submit feedback!
+        </p>
+
+        <form method="post" action="https://us-central1-notification-demo-service.cloudfunctions.net/send?id=ZjzwrTxcUKlAU8GBguRt">
+            <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+            
+            {{ radioButtons('is_awesome', { '1':'Yes','2':'No'}, data.is_awesome, 'form.is_awesome', errors) }}
+            {{ textArea('why_awesome', 'form.why_awesome') }}
+            {{ formButtons(submitButtonText = 'Submit') }}
+        </form>
+    </div>
+
+{% endblock %}

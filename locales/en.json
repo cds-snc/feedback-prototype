@@ -51,5 +51,10 @@
   "caught this error": "caught this error",
   "Cannot read property 'match' of undefined": "Cannot read property 'match' of undefined",
   "Government of Canada": "Government of Canada",
-  "required": "required"
+  "required": "required",
+  "feedback.title": "feedback.title",
+  "feedback.intro": "feedback.intro",
+  "form.is_awesome": "Is our service awesome?",
+  "form.why_awesome": "How can we make it more awesome?",
+  "Submit": "Submit"
 }
