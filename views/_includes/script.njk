@@ -13,8 +13,6 @@
 <script>
     if (typeof Promise !== "function" && document.querySelector('details') !== null) 
         document.write('<script src="/js/details-element-polyfill.js"><\/script>');
-</script>
-<script>
     var inlineFeedbackPrompt = document.querySelector('.inline-feedback-prompt a');
     inlineFeedbackPrompt.addEventListener("click", function(e) {
         e.preventDefault();
