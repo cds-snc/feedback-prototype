@@ -14,6 +14,15 @@
     if (typeof Promise !== "function" && document.querySelector('details') !== null) 
         document.write('<script src="/js/details-element-polyfill.js"><\/script>');
 </script>
+<script>
+    var inlineFeedbackPrompt = document.querySelector('.inline-feedback-prompt a');
+    inlineFeedbackPrompt.addEventListener("click", function(e) {
+        e.preventDefault();
+        var inlineFeedbackDiv = document.querySelector('.inline-feedback');
+        inlineFeedbackDiv.setAttribute('class', 'inline-feedback expanded');
+        return false;
+    });
+</script>
 
 {% if $env.GOOGLE_ANALYTICS %}
     <script async src="https://www.googletagmanager.com/gtag/js?id={{$env.GOOGLE_ANALYTICS}}"></script>
