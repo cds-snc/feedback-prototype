@@ -14,18 +14,41 @@ footer {
     bottom: $height-footer;
     left: 0;
     right: 0;
+    background-color: white;
 
-    .inline-feedback-prompt {
-      height: $height-inline-feedback-prompt;
+    .inline-feedback-wrapper {
       max-width: 900px;
       margin: 0 auto;
-      padding: $space-xxs $space-md;
-      background-color: $color-blue-light;
-      font-size: 0.8em;
-
-      a {
-        color: $color-white;
+      
+      .inline-feedback-prompt {
+        padding: $space-xxs $space-md;
+        height: $height-inline-feedback-prompt;
+        background-color: $color-blue-light;
+        font-size: 0.8em;
+  
+        a {
+          color: $color-white;
+        }
       }
+
+      form {
+        display: none;
+      }
+    }
+
+    &.expanded {
+      
+      .inline-feedback-prompt {
+        display: none;
+      }
+
+      form {
+        margin: 0;
+        padding: 20px;
+        border-top: 10px solid $color-blue-light;
+        display: block;
+      }
+
     }
   }
 

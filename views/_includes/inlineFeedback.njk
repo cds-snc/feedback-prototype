@@ -1,5 +1,14 @@
 <div class=inline-feedback>
-    <div class=inline-feedback-prompt>
-        <a href="#">Is something wrong?</a>
+    <div class=inline-feedback-wrapper>
+        <div class=inline-feedback-prompt>
+            <a href="#">Is something wrong?</a>
+        </div>
+        <form method="post" action="https://us-central1-notification-demo-service.cloudfunctions.net/send?id=ZjzwrTxcUKlAU8GBguRt">
+            <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+            
+            {{ radioButtons('is_awesome', { '1':'Yes','2':'No'}, data.is_awesome, 'form.is_awesome', errors) }}
+            {{ textArea('why_awesome', 'form.why_awesome') }}
+            {{ formButtons(submitButtonText = 'Submit') }}
+        </form>
     </div>
 </div>
