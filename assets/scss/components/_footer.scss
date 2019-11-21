@@ -9,6 +9,26 @@ footer {
   bottom: 0;
   width: 100%;
 
+  .inline-feedback {
+    position: absolute;
+    bottom: $height-footer;
+    left: 0;
+    right: 0;
+
+    .inline-feedback-prompt {
+      height: $height-inline-feedback-prompt;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: $space-xxs $space-md;
+      background-color: $color-blue-light;
+      font-size: 0.8em;
+
+      a {
+        color: $color-white;
+      }
+    }
+  }
+
   .footer-links {
     font-size: 0.85em;
 
