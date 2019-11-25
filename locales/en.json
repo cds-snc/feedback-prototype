@@ -34,6 +34,8 @@
   "form.expiry.desc": "eg. 2010-12",
   "form.fullname": "Full name",
   "form.fullname.desc": "Enter your name as it appears on your passport",
+  "form.midservice_feedback.text": "Can you tell us more?",
+  "form.midservice_feedback.text.hint": "Do not include any personal or financial details",
   "form.midservice_feedback.type": "What kind of problem is happening?",
   "form.notify_by": "Notify by",
   "form.notify_by.desc": "You can select as many as you like.",
@@ -62,5 +64,7 @@
   "[product specific issue e.g.: Your situation has changed so you can't file online]": "[product specific issue e.g.: Your situation has changed so you can't file online]",
   "[product specific issue e.g.: You're missing documents]": "[product specific issue e.g.: You're missing documents]",
   "You're worried about your privacy": "You're worried about your privacy",
-  "Other": "Other"
+  "Other": "Other",
+  "form.midservie_feedback.text": "form.midservie_feedback.text",
+  "form.midservice_feedback.hint": "form.midservice_feedback.hint"
 }

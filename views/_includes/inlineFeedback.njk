@@ -3,12 +3,12 @@
         <div class=inline-feedback-prompt>
             <a class="open" href="#">Is something wrong?</a>
         </div>
-        <form class="relative m-0 py-4" method="post" action="https://us-central1-notification-demo-service.cloudfunctions.net/send?id=ZjzwrTxcUKlAU8GBguRt">
+        <form class="relative m-0 pb-4" method="post" action="https://us-central1-notification-demo-service.cloudfunctions.net/send?id=ZjzwrTxcUKlAU8GBguRt">
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
-            <a class="close absolute top-0 right-0 text-sm p-1" href="#">Close</a>
+            <a class="close absolute top-0 right-0 text-sm" href="#">Close</a>
 
-            <h4>Is something wrong?</h4>
-            <p class="mt-2 mb-4 text-sm">If you need help from a person… [insert info here]</p>
+            <h1>Is something wrong?</h1>
+            <p class="mt-1 mb-4 text-sm">If you need help from a person… [insert info here]</p>
             
             {{ checkBoxes('feedback_type', 
                 {
@@ -23,7 +23,7 @@
                 'form.midservice_feedback.type', 
                 errors)
             }}
-            {{ textArea('why_awesome', 'form.why_awesome') }}
+            {{ textArea('feedback_text', 'form.midservice_feedback.text', { hint: 'form.midservice_feedback.text.hint' }) }}
             {{ formButtons(submitButtonText = 'Submit') }}
         </form>
     </div>
