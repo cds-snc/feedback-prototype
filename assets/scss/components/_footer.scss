@@ -11,6 +11,8 @@ footer {
 
   .inline-feedback {
     bottom: $height-footer;
+    max-height: 35px;
+    transition: max-height 0.3s ease-out;
       
     .inline-feedback-prompt {
       padding: $space-xxs $space-md;
@@ -29,6 +31,7 @@ footer {
     }
 
     &.expanded {
+      max-height: 600px;
       
       .inline-feedback-prompt {
         display: none;
