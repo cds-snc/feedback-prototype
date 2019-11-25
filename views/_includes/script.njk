@@ -14,20 +14,22 @@
     if (typeof Promise !== "function" && document.querySelector('details') !== null) 
         document.write('<script src="/js/details-element-polyfill.js"><\/script>');
     
-    // inline feedback component interactions 
+    // inline feedback component open-close acitons 
     var inlineFeedbackDiv = document.querySelector('.inline-feedback'),
     inlineFeedbackOpenEl = inlineFeedbackDiv.querySelector('a.open'),
-    inlineFeedbackCloseEl = inlineFeedbackDiv.querySelector('a.close');
+    inlineFeedbackCloseEl = inlineFeedbackDiv.querySelector('a.close')
+    inlineFeedbackDivClasses = inlineFeedbackDiv.classList,
+    componentOpenClass = 'expanded';
 
     inlineFeedbackOpenEl.addEventListener("click", function(e) {
         e.preventDefault();
-        inlineFeedbackDiv.setAttribute('class', 'inline-feedback expanded');
+        inlineFeedbackDivClasses.add(componentOpenClass);
         return false;
     });
 
     inlineFeedbackCloseEl.addEventListener("click", function(e) {
         e.preventDefault();
-        inlineFeedbackDiv.setAttribute('class', 'inline-feedback');
+        inlineFeedbackDivClasses.remove(componentOpenClass);
         return false;
     });
 

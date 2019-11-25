@@ -10,30 +10,22 @@ footer {
   width: 100%;
 
   .inline-feedback {
-    position: absolute;
     bottom: $height-footer;
-    left: 0;
-    right: 0;
-    background-color: white;
-
-    .inline-feedback-wrapper {
-      max-width: 900px;
-      margin: 0 auto;
       
-      .inline-feedback-prompt {
-        padding: $space-xxs $space-md;
-        height: $height-inline-feedback-prompt;
-        background-color: $color-blue-light;
-        font-size: 0.8em;
-  
-        a {
-          color: $color-white;
-        }
-      }
+    .inline-feedback-prompt {
+      padding: $space-xxs $space-md;
+      height: $height-inline-feedback-prompt;
+      background-color: $color-blue-light;
+      font-size: 0.8em;
 
-      form {
-        display: none;
+      a {
+        color: $color-white;
       }
+    }
+
+    form {
+      display: none;
+      border-top: 10px solid $color-blue-light;
     }
 
     &.expanded {
@@ -43,12 +35,8 @@ footer {
       }
 
       form {
-        margin: 0;
-        padding: 20px;
-        border-top: 10px solid $color-blue-light;
         display: block;
       }
-
     }
   }
 
