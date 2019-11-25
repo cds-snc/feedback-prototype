@@ -11,8 +11,8 @@ footer {
 
   .inline-feedback {
     bottom: $height-footer;
-    max-height: 35px;
-    transition: max-height 0.3s ease-out;
+    max-height: 50px;  
+    transition: max-height 0.3s ease-out; // a hack pattern for defining a height transition when height isn't explicitly defined. See https://css-tricks.com/using-css-transitions-auto-dimensions/
       
     .inline-feedback-prompt {
       padding: $space-xxs $space-md;
