@@ -1,16 +1,28 @@
-<div class="inline-feedback absolute left-0 right-0 bg-white">
+<div class="inline-feedback absolute left-0 right-0 bg-white overflow-scroll">
     <div class="inline-feedback-wrapper mx-auto my-0 max-w-4xl">
         <div class=inline-feedback-prompt>
             <a class="open" href="#">Is something wrong?</a>
         </div>
-        <form class="relative m-0 p-1" method="post" action="https://us-central1-notification-demo-service.cloudfunctions.net/send?id=ZjzwrTxcUKlAU8GBguRt">
+        <form class="relative m-0 py-4" method="post" action="https://us-central1-notification-demo-service.cloudfunctions.net/send?id=ZjzwrTxcUKlAU8GBguRt">
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
             <a class="close absolute top-0 right-0 text-sm p-1" href="#">Close</a>
 
             <h4>Is something wrong?</h4>
             <p class="mt-2 mb-4 text-sm">If you need help from a person… [insert info here]</p>
             
-            {{ radioButtons('is_awesome', { '1':'Yes','2':'No'}, data.is_awesome, 'form.is_awesome', errors) }}
+            {{ checkBoxes('feedback_type', 
+                {
+                    '1':"Incorrect or confusing information on this page",
+                    '2':"[product specific issue e.g.: Your situation has changed so you can't file online]",
+                    '3':"[product specific issue e.g.: You're missing documents]",
+                    '4':"You're worried about your privacy",
+                    '5':"Other"
+
+                }, 
+                data.feedback_type, 
+                'form.midservice_feedback.type', 
+                errors)
+            }}
             {{ textArea('why_awesome', 'form.why_awesome') }}
             {{ formButtons(submitButtonText = 'Submit') }}
         </form>

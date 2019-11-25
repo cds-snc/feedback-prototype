@@ -11,9 +11,9 @@ footer {
 
   .inline-feedback {
     bottom: $height-footer;
-    max-height: 50px;  
-    transition: max-height 0.3s ease-out; // a hack pattern for defining a height transition when height isn't explicitly defined. See https://css-tricks.com/using-css-transitions-auto-dimensions/
-      
+    max-height: 40px;  
+    transition: max-height 0.3s ease-out;
+
     .inline-feedback-prompt {
       padding: $space-xxs $space-md;
       height: $height-inline-feedback-prompt;
@@ -27,11 +27,11 @@ footer {
 
     form {
       display: none;
-      border-top: 10px solid $color-blue-light;
     }
 
     &.expanded {
-      max-height: 600px;
+      max-height: 400px;
+      border-top: 5px solid $color-blue-light;
       
       .inline-feedback-prompt {
         display: none;
