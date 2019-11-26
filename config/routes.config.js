@@ -3,7 +3,7 @@ const routes = [
   { name: 'start', path: { en: '/start', fr: '/debut' } },
   { name: 'personal', path: { en: '/personal', fr: '/personnel' } },
   { name: 'feedback', path: { en: '/feedback', fr: '/feedback' } },
-  { name: 'confirmation', path: { en: '/confirmation', fr: '/confirmation' } },
+  { name: 'confirmation', path: '/confirmation' },
 ]
 
 const locales = ['en', 'fr']

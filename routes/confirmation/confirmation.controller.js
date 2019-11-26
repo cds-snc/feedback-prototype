@@ -1,10 +1,21 @@
-const { routeUtils } = require('./../../utils')
+const {
+  validateRouteData,
+  getViewData,
+  setFlashMessageContent,
+} = require('../../utils/index')
 
 module.exports = (app, route) => {
-  const name = route.name
-
   route.draw(app)
-  .get((req, res) => {
-    res.render(name, routeUtils.getViewData(req, {}))
-  })
+    .get(async (req, res) => {
+      // ⚠️ experimental
+      // validate data from previous step
+      // see if we should be allowed to reach this step
+      const { Schema } = require('../personal/schema.js')
+      const result = await validateRouteData(req, Schema)
+      if (!result.status) {
+        setFlashMessageContent(req, result.errors)
+      }
+
+      res.render(route.name, getViewData(req))
+    })
 }
