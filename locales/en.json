@@ -65,5 +65,8 @@
   "form.how_can_we_do_better.label": "How can we do better?",
   "form.how_can_we_do_better.hint": "Do not include any personal or financial details.",
   "post-service-feedback.title": "Please help us get better",
-  "confirmation.intro": "confirmation.intro"
+  "confirmation.intro": "confirmation.intro",
+  "2 hard": "2 hard",
+  "3 neutral": "3 neutral",
+  "4 easy": "4 easy"
 }
