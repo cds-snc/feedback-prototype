@@ -1,4 +1,7 @@
 {
+  "2": "2",
+  "3": "3",
+  "4": "4",
   "404": "404",
   "500": "500",
   "Cancel": "Cancel",
@@ -56,5 +59,15 @@
   "feedback.intro": "feedback.intro",
   "form.is_awesome": "Is our service awesome?",
   "form.why_awesome": "How can we make it more awesome?",
-  "Submit": "Submit"
+  "Submit": "Submit",
+  "form.was_service_hard_or_easy": "Was this service hard or easy to use?",
+  "1 very hard": "1 very hard",
+  "5 very easy": "5 very easy",
+  "form.how_can_we_do_better.label": "How can we do better?",
+  "form.how_can_we_do_better.hint": "Do not include any personal or financial details.",
+  "post-service-feedback.title": "Please help us get better",
+  "2 hard": "2 hard",
+  "3 neutral": "3 neutral",
+  "4 easy": "4 easy",
+  "feedback-confirmation.title": "Thank you for your feedback."
 }
