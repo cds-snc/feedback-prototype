@@ -66,5 +66,10 @@
   "You're worried about your privacy": "You're worried about your privacy",
   "Other": "Other",
   "form.midservie_feedback.text": "form.midservie_feedback.text",
-  "form.midservice_feedback.hint": "form.midservice_feedback.hint"
+  "form.midservice_feedback.hint": "form.midservice_feedback.hint",
+  "This page does not work with your screen reader or other adaptive technology": "This page does not work with your screen reader or other adaptive technology",
+  "You could not complete [the task]": "You could not complete [the task]",
+  "[product specific issue e.g: “Your situation has changed so you can’t file online”]": "[product specific issue e.g: “Your situation has changed so you can’t file online”]",
+  "[product specific issue e.g.: “You’re missing documents”]": "[product specific issue e.g.: “You’re missing documents”]",
+  "You’re worried about your privacy": "You’re worried about your privacy"
 }
