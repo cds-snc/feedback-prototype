@@ -1,15 +1,15 @@
 <div class="inline-feedback absolute left-0 right-0 bg-white overflow-auto">
-    <div class="inline-feedback-wrapper px-4 mx-auto my-0 max-w-4xl">
+    <div class="inline-feedback-wrapper mx-auto my-0 max-w-4xl">
         <div class=inline-feedback-prompt>
             <a class="open" href="#">Is something wrong?</a>
         </div>
         <form class="md:relative md:m-0 md:pb-4" method="post" action="https://us-central1-notification-demo-service.cloudfunctions.net/send?id=ZjzwrTxcUKlAU8GBguRt">
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
-            <a class="close md:absolute md:top-0 md:right-0 md:text-lg" href="#">Close</a>
+            <a class="close md:absolute md:top-0 md:right-0 text-lg" href="#">Close</a>
 
             <h1>Is something wrong?</h1>
-            <p class="mt-7 text-xlg">If you need help from a person… [insert info here]</p>
-            <p class="mt-1 mb-10 text-xlg">If you need this information in another format like large-print, Braille or audio, [contact…]</p>
+            <p class="mt-7 text-xl">If you need help from a person… [insert info here]</p>
+            <p class="mt-1 mb-10 text-xl">If you need this information in another format like large-print, Braille or audio, [contact…]</p>
             
             {{ checkBoxes('feedback_type', 
                 {
