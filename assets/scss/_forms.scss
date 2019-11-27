@@ -1,6 +1,6 @@
 form {
   margin-top: $space-xl;
-  max-width: 300px;
+  // max-width: 300px;
   width: 100%;
 
   .d--ib {
@@ -48,7 +48,7 @@ form.form--lg {
 
   fieldset legend,
   div:not(.multiple-choice__item) > label {
-    font-size: 1em;
+    font-size: 1.125rem;
   }
 
 }
@@ -91,7 +91,7 @@ form {
     font-family: 'Lato', sans-serif;
     font-weight: 600;
     display: block;
-    font-size: 1.07em;
+    font-size: 1.5rem;
   }
 
   .form-message {
