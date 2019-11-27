@@ -7,7 +7,7 @@
     <div>
         <p>{{ __('personal.intro') }}</p>
     </div>
-    <form method="post" action="https://us-central1-notification-demo-service.cloudfunctions.net/send?id=ZjzwrTxcUKlAU8GBguRt">
+    <form method="post">
         <input type="hidden" name="_csrf" value="{{ csrfToken }}">
         <input type="hidden" name="service_name" value="test-service-1">
 
