@@ -9,6 +9,7 @@
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
             {{ radioButtons('was_service_hard_or_easy', { '1':'1 very hard', '2':'2 hard', '3':'3 neutral', '4':'4 easy', '5':'5 very easy' }, data.was_service_hard_or_easy, 'form.was_service_hard_or_easy', errors) }}
             {{ textArea('how_can_we_do_better', 'form.how_can_we_do_better.label', {hint: 'form.how_can_we_do_better.hint'}) }}
+            {{ radioButtons('would_you_use_service_again', { '1':'Yes', '2':'No' }, data.would_you_use_service_again, 'form.would_you_use_service_again', errors) }}
             {{ formButtons(submitButtonText = 'Submit') }}
         </form>
     </div>

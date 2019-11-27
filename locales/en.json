@@ -84,5 +84,6 @@
   "2 hard": "2 hard",
   "3 neutral": "3 neutral",
   "4 easy": "4 easy",
-  "feedback-confirmation.title": "Thank you for your feedback."
+  "feedback-confirmation.title": "Thanks for helping us improve this service!",
+  "form.would_you_use_service_again": "Would you use this service again, if you have to [insert task] in the future?"
 }
