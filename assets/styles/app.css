@@ -1,0 +1,6 @@
+@tailwind components;
+@tailwind utilities;
+
+.big{
+    @apply text-xl text-red-800;
+}
