@@ -1,0 +1,30 @@
+<div class="inline-feedback absolute left-0 right-0 bg-white overflow-y-auto">
+    <div class="inline-feedback-wrapper mx-auto my-0 max-w-4xl">
+        <div class=inline-feedback-prompt>
+            <a class="open" href="#">Is something wrong?</a>
+        </div>
+        <form class="relative m-0 pb-4" method="post" action="https://us-central1-notification-demo-service.cloudfunctions.net/send?id=ZjzwrTxcUKlAU8GBguRt">
+            <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+            <a class="close absolute top-0 right-0 text-sm" href="#">Close</a>
+
+            <h1>Is something wrong?</h1>
+            <p class="mt-1 mb-4 text-sm">If you need help from a person… [insert info here]</p>
+            
+            {{ checkBoxes('feedback_type', 
+                {
+                    '1':"Incorrect or confusing information on this page",
+                    '2':"[product specific issue e.g.: Your situation has changed so you can't file online]",
+                    '3':"[product specific issue e.g.: You're missing documents]",
+                    '4':"You're worried about your privacy",
+                    '5':"Other"
+
+                }, 
+                data.feedback_type, 
+                'form.midservice_feedback.type', 
+                errors)
+            }}
+            {{ textArea('feedback_text', 'form.midservice_feedback.text', { hint: 'form.midservice_feedback.text.hint' }) }}
+            <button type="submit" class="w-auto">Submit &#8594;</button>
+        </form>
+    </div>
+</div>
