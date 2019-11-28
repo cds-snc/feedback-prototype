@@ -1,12 +1,11 @@
 <div class="inline-feedback absolute left-0 right-0 bg-white overflow-y-auto">
     <div class="inline-feedback-wrapper mx-auto my-0 max-w-4xl">
         <div class=inline-feedback-prompt>
-            <a class="open" href="#">Is something wrong?</a>
+            <a class="open" onclick="inlineFeedbackOpenFn(event)" href="#">Is something wrong?</a>
         </div>
         <form class="md:relative md:m-0 md:pb-4" method="post" action="https://us-central1-notification-demo-service.cloudfunctions.net/send?id=ZjzwrTxcUKlAU8GBguRt">
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
-            <a class="close md:absolute md:top-0 md:right-0 text-lg" href="#">Close</a>
-
+            <a class="close md:absolute md:top-0 md:right-0 text-lg" onclick="inlineFeedbackCloseFn(event)" href="#">Close</a>
             <h1>Is something wrong?</h1>
             <p class="mt-7 text-xl">If you need help from a person… [insert info here]</p>
             <p class="mt-1 mb-10 text-xl">If you need this information in another format like large-print, Braille or audio, [contact…]</p>
@@ -27,7 +26,28 @@
                 errors)
             }}
             {{ textArea('feedback_text', 'form.midservice_feedback.text', { hint: 'form.midservice_feedback.text.hint' }) }}
-            <button type="submit" class="w-auto">Submit &#8594;</button>
+    
         </form>
     </div>
 </div>
+
+<script>
+    if (typeof Promise !== "function" && document.querySelector('details') !== null) {
+        document.write('<script src="/js/details-element-polyfill.js"><\/script>');
+    }
+    var inlineFeedbackDiv = document.querySelector('.inline-feedback')
+    var inlineFeedbackDivClasses = inlineFeedbackDiv.classList
+    var componentOpenClass = 'expanded'
+
+    const inlineFeedbackOpenFn = (e) => {
+        e.preventDefault();
+        inlineFeedbackDivClasses.add(componentOpenClass);
+        return false;
+    }
+
+    const inlineFeedbackCloseFn = (e) => {
+        e.preventDefault();
+        inlineFeedbackDivClasses.remove(componentOpenClass);
+        return false;
+    }
+</script>

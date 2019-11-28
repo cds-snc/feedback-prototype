@@ -10,30 +10,6 @@
         })
     }
 </script>
-<script>
-    if (typeof Promise !== "function" && document.querySelector('details') !== null) 
-        document.write('<script src="/js/details-element-polyfill.js"><\/script>');
-    
-    // inline feedback component open-close acitons 
-    var inlineFeedbackDiv = document.querySelector('.inline-feedback'),
-    inlineFeedbackOpenEl = inlineFeedbackDiv.querySelector('a.open'),
-    inlineFeedbackCloseEl = inlineFeedbackDiv.querySelector('a.close')
-    inlineFeedbackDivClasses = inlineFeedbackDiv.classList,
-    componentOpenClass = 'expanded';
-
-    inlineFeedbackOpenEl.addEventListener("click", function(e) {
-        e.preventDefault();
-        inlineFeedbackDivClasses.add(componentOpenClass);
-        return false;
-    });
-
-    inlineFeedbackCloseEl.addEventListener("click", function(e) {
-        e.preventDefault();
-        inlineFeedbackDivClasses.remove(componentOpenClass);
-        return false;
-    });
-
-</script>
 
 {% if $env.GOOGLE_ANALYTICS %}
     <script async src="https://www.googletagmanager.com/gtag/js?id={{$env.GOOGLE_ANALYTICS}}"></script>
@@ -46,3 +22,4 @@
       gtag('config', '{{$env.GOOGLE_ANALYTICS}}', {'anonymize_ip': true});
     </script>
 {% endif %}
+
