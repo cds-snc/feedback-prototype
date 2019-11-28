@@ -72,6 +72,10 @@ app.set('views', [path.join(__dirname, './views')])
 
 app.routes = configRoutes(app, routes, locales)
 
+// plugin setup
+const { addViewPath } = require('./utils/view.helpers')
+addViewPath(app, path.join(__dirname, './plugin'))
+
 // view engine setup
 const nunjucks = require('nunjucks')
 
