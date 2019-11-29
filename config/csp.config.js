@@ -8,6 +8,7 @@ if (process.env.NODE_ENV === 'development') {
 
 module.exports = {
   defaultSrc: ["'self'"],
+  connectSrc: ["'self'", '*.herokuapp.com'],
   scriptSrc: scriptSrc,
   baseUri: ["'none'"],
   fontSrc: ["'self'", 'https://fonts.gstatic.com'],

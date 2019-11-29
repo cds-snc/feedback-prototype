@@ -2,8 +2,9 @@
     <div class="inline-feedback-wrapper mx-auto my-0 max-w-4xl">
         <div class=inline-feedback-prompt>
             <a class="open" href="#">Is something wrong?</a>
+            <h5 class="confirmation mt-1 hidden">Thank you for your feedback</h5>
         </div>
-        <form class="relative m-0 pb-4" method="post" action="https://us-central1-notification-demo-service.cloudfunctions.net/send?id=ZjzwrTxcUKlAU8GBguRt">
+        <form class="relative m-0 pb-4">
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
             <a class="close absolute top-0 right-0 text-sm" href="#">Close</a>
 

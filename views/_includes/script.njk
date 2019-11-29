@@ -18,7 +18,7 @@
         /* inline feedback component */ 
     
         // show/hide compont acitons 
-        var inlineFeedbackDiv = document.querySelector('.inline-feedback'),
+        const inlineFeedbackDiv = document.querySelector('.inline-feedback'),
         inlineFeedbackOpenEl = inlineFeedbackDiv.querySelector('a.open'),
         inlineFeedbackCloseEl = inlineFeedbackDiv.querySelector('a.close')
         inlineFeedbackDivClasses = inlineFeedbackDiv.classList,
@@ -33,6 +33,50 @@
         inlineFeedbackCloseEl.addEventListener("click", function(e) {
             e.preventDefault();
             inlineFeedbackDivClasses.remove(componentOpenClass);
+            return false;
+        });
+
+        // post inline-feedback form data
+        const formEl = inlineFeedbackDiv.querySelector('form'),
+        formObj = new FormData(formEl);
+
+        async function sendFeedback(data) {
+
+            let endPoint, // = "https://cds-feedback-collector.herokuapp.com/en/send?id=4b17b15e-4cd6-42c6-bd7a-9e61bd05b64d",
+            response;
+            
+            const inlineFeedbackConfirmationEl = inlineFeedbackDiv.querySelector('.confirmation'),
+            mockResponseHeaders = { "status" : 299, "statusText" : "No endpoint configured" },
+            mockResponse = new Response(null, mockResponseHeaders);
+
+            if (endPoint === undefined) {
+                response = mockResponse;
+            } else {
+                response = await fetch(endPoint, {
+                    mode: 'cors', 
+                    method: 'POST',
+                    body: data
+                }); 
+            }
+
+            const responseStatusCode = await response.status;
+            
+            if (response.ok) {
+                inlineFeedbackCloseEl.click();
+                inlineFeedbackOpenEl.classList.add('hidden');
+                inlineFeedbackConfirmationEl.classList.remove('hidden');
+                if (responseStatusCode === 299) {
+                    console.warn("Feedback post response status " + responseStatusCode + ": " + response.statusText); 
+                }
+            } else {
+                // form error messages 
+                console.log("Feedback post response status " + responseStatusCode + ": " + response.statusText)
+            }
+        };
+
+        formEl.addEventListener("submit", function(e) {
+            e.preventDefault();
+            sendFeedback(formObj);
             return false;
         });
     });
