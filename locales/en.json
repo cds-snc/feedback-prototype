@@ -87,5 +87,6 @@
   "feedback-confirmation.title": "Thanks for helping us improve this service!",
   "form.would_you_use_service_again": "Would you use this service again, if you have to [insert task] in the future?",
   "form.hard_easy_hint": "On a scale of 1 to 5 (1 is very hard and 5 is very easy)",
-  "back": "Go back"
+  "back": "Go back",
+  "You could not complete [product-specific service/task]": "You could not complete [product-specific service/task]"
 }
