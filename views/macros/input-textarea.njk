@@ -9,7 +9,7 @@
 
 {% macro textArea(name, label, attributes) %}
     <div class="{{ 'has-error' if errors and errors[name] }} {{ attributes.divClasses }}">
-        <label for="{{ name }}" id="{{ name }}__label">
+        <label for="{{ name }}" id="{{ name }}__label" class="text-2xl">
         {% if attributes.required %}
                 <span aria-hidden="true" class="required">*</span>
         {% endif %}

@@ -1,13 +1,14 @@
 {% extends "base.njk" %}
 
 {% block content %}
-
+    <a href="start">&#9666; {{  __("back") }}</a>
     <h1>{{ __("post-service-feedback.title") }}</h1>
 
     <div>
         <form method="post" action="https://cds-feedback-collector.herokuapp.com/en/send?id=3455abc1-1490-4d0b-9f0e-ac9ffd5f980a">
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
-            {{ radioButtons('was_service_hard_or_easy', { '1':'1 very hard', '2':'2 hard', '3':'3 neutral', '4':'4 easy', '5':'5 very easy' }, data.was_service_hard_or_easy, 'form.was_service_hard_or_easy', errors) }}
+            {{ radioButtons('was_service_hard_or_easy', { '1':'1 very hard', '2':'2 hard', '3':'3 neutral', '4':'4 easy', '5':'5 very easy' }, data.was_service_hard_or_easy, 'form.was_service_hard_or_easy', errors, { hint: 'form.hard_easy_hint' }) }}
+            {{ radioButtons('would_you_use_service_again', { '1':'Yes', '2':'No' }, data.would_you_use_service_again, 'form.would_you_use_service_again', errors) }}
             {{ textArea('how_can_we_do_better', 'form.how_can_we_do_better.label', {hint: 'form.how_can_we_do_better.hint'}) }}
             {{ formButtons(submitButtonText = 'Submit') }}
         </form>
