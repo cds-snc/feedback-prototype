@@ -4,7 +4,7 @@ module.exports = (app, route) => {
 
   route.draw(app)
     .get((req, res) => {
-      const js = getClientJs(req, "thing")
+      const js = getClientJs(req, "inlineFeedback")
 
       res.render("feedback-plugin", routeUtils.getViewData(req, { jsFiles: js ? [js] : false }))
     })

@@ -6,8 +6,8 @@ module.exports = (env, argv) => {
     mode: argv.mode,
     entry: {
       styles: './assets/scss/app.scss',
+      inlineFeedback: './plugins/feedback/js/inline-feedback.js',
       personal: './routes/personal/js/personal.js',
-      thing: './plugins/feedback/js/inline-feedback.js',
     },
     output: {
       filename: 'js/[name].[chunkhash].js',
