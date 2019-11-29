@@ -1,7 +1,7 @@
 {
   "404": "404",
   "500": "500",
-  "Cancel": "Cancel",
+  "Cancel": "FR Cancel",
   "Continue": "Continue",
   "Email": "Email",
   "Error:": "Error:",
@@ -59,7 +59,7 @@
   "[product specific issue e.g.: “You’re missing documents”]": "[product specific issue e.g.: “You’re missing documents”]",
   "You’re worried about your privacy": "Inquiétude au sujet de la protection de vos renseignements personnels",
   "Other": "Autre",
-  "back": "Go back",
+  "back": "FR Go back",
   "post-service-feedback.title": "Veuillez nous aider à améliorer le service",
   "form.was_service_hard_or_easy": "Ce service était-il difficile ou facile à utiliser?",
   "form.hard_easy_hint": "Sur une échelle de 1 à 5 (1 étant très difficile et 5 étant très facile)",
@@ -71,11 +71,11 @@
   "form.would_you_use_service_again": "Utiliseriez-vous de nouveau ce service si vous deviez [insert task]?",
   "form.how_can_we_do_better.label": "Comment pouvons-nous améliorer le service?",
   "form.how_can_we_do_better.hint": "N’incluez aucune information personnelle ou financière. ",
-  "Submit": "Submit",
+  "Submit": "FR Submit",
   "inline-feedback.title": "Y a-t-il un problème?",
   "inline-feedback.footer-expand-link": "Y a-t-il un problème?",
-  "inline-feedback.close": "inline-feedback.close",
+  "inline-feedback.close": "FR Close",
   "inline-feedback.contact-1": "Si vous avez besoin de l’aide d’une personne… [insert info here]",
   "inline-feedback.contact-2": "Si vous avez besoin d’obtenir le contenu dans un autre format (gros caractères, Braille, audio), [contactez…]",
-  "inline-feedback.submit": "inline-feedback.submit"
+  "inline-feedback.submit": "FR Submit"
 }
