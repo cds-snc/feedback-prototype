@@ -13,7 +13,8 @@ const { hasData } = require('./utils')
 const { addNunjucksFilters } = require('./filters')
 const csp = require('./config/csp.config')
 const csrf = require('csurf')
-
+const { plugins } = require('./config/plugins.config')
+const { registerPlugins } = require('./plugins/register')
 // check to see if we have a custom configRoutes function
 let { configRoutes, routes, locales } = require('./config/routes.config')
 
@@ -71,10 +72,7 @@ app.locals.basedir = path.join(__dirname, './views')
 app.set('views', [path.join(__dirname, './views')])
 
 app.routes = configRoutes(app, routes, locales)
-
-// plugin setup
-const { addViewPath } = require('./utils/view.helpers')
-addViewPath(app, path.join(__dirname, './plugin/templates'))
+app.plugins = registerPlugins(app, plugins)
 
 // view engine setup
 const nunjucks = require('nunjucks')
