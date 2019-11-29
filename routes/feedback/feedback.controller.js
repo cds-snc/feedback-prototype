@@ -6,6 +6,6 @@ module.exports = (app, route) => {
     .get((req, res) => {
       const js = getClientJs(req, "inlineFeedback")
 
-      res.render("feedback-plugin", routeUtils.getViewData(req, { jsFiles: js ? [js] : false }))
+      res.render("feedback-plugin", routeUtils.getViewData(req, { pluginJsFiles: js ? [js] : false }))
     })
 }

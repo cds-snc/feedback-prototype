@@ -38,9 +38,15 @@
         </div>
     </body>
     {% include "_includes/script.njk" %}
+    {# <script src="./../plugins/feedback/js/inline-feedback.js"></script> #}
     {% block scripts %}
         {% if jsFiles %}
             {% for val in jsFiles %}
+                <script type="text/javascript" src={{val}}></script>
+            {% endfor %}
+        {% endif %}
+        {% if pluginJsFiles %}
+            {% for val in pluginJsFiles %}
                 <script type="text/javascript" src={{val}}></script>
             {% endfor %}
         {% endif %}
