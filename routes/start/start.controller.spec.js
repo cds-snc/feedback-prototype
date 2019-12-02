@@ -35,6 +35,6 @@ test('Can send get request to start route and have empty js src', async () => {
   if(process.env.GOOGLE_ANALYTICS){
     expect(countScriptTags(response)).toBe(4)
   } else {
-    expect(countScriptTags(response)).toBe(1)
+    expect(countScriptTags(response)).toBe(2)
   }
 })
