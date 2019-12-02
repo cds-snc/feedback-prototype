@@ -13,78 +13,6 @@
 <script>
     if (typeof Promise !== "function" && document.querySelector('details') !== null) 
         document.write('<script src="/js/details-element-polyfill.js"><\/script>');
-    
-    window.addEventListener("load", function () {
-        /* inline feedback component */ 
-    
-        const fbkEl = document.querySelector('.inline-feedback'),
-        fbkOpenEl = fbkEl.querySelector('a.open'),
-        fbkCloseEl = fbkEl.querySelector('a.close'),
-        fbkFormEl = fbkEl.querySelector('form'),
-        fbkElClasses = fbkEl.classList,
-        fbkOpenClass = 'expanded';
-
-        // show component 
-        fbkOpenEl.addEventListener("click", function(e) {
-            e.preventDefault();
-            fbkElClasses.add(fbkOpenClass);
-            return false;
-        });
-
-        // hide component 
-        fbkCloseEl.addEventListener("click", function(e) {
-            e.preventDefault();
-            fbkElClasses.remove(fbkOpenClass);
-            return false;
-        });
-
-        // post form data asynchronously 
-        async function sendFeedback(form) {
-
-            let endPoint, // = "https://cds-feedback-collector.herokuapp.com/en/send?id=",
-            response;
-            
-            const inlineFeedbackConfirmationEl = fbkEl.querySelector('.confirmation'),
-            formData = new FormData(form),
-            jsonFormData = JSON.stringify(Object.fromEntries(formData)),
-            mockResponseHeaders = { "status" : 299, "statusText" : "No endpoint configured" },
-            mockResponse = new Response(null, mockResponseHeaders);
-
-
-            if (endPoint === undefined) {
-                response = mockResponse;
-            } else {
-                response = await fetch(endPoint, {
-                    mode: 'cors', 
-                    method: 'POST',
-                    body: jsonFormData,
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                }); 
-            }
-
-            const responseStatusCode = await response.status;
-            
-            if (response.ok) {
-                fbkCloseEl.click();
-                fbkOpenEl.classList.add('hidden');
-                inlineFeedbackConfirmationEl.classList.remove('hidden');
-                if (responseStatusCode === 299) {
-                    console.warn("Feedback post response status " + responseStatusCode + ": " + response.statusText); 
-                }
-            } else {
-                // form error messages 
-                console.log("Feedback post response status " + responseStatusCode + ": " + response.statusText)
-            }
-        };
-
-        fbkFormEl.addEventListener("submit", function(e) {
-            e.preventDefault();
-            sendFeedback(this);
-            return false;
-        });
-    });
 </script>
 
 {% if $env.GOOGLE_ANALYTICS %}
@@ -98,3 +26,4 @@
       gtag('config', '{{$env.GOOGLE_ANALYTICS}}', {'anonymize_ip': true});
     </script>
 {% endif %}
+

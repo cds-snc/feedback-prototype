@@ -2,7 +2,8 @@ const { getSessionData } = require('./session.helpers')
 const { getFlashMessage } = require('./flash.message.helpers')
 
 const getViewData = (req, optionalParams = {}) => {
-  const params = {
+
+  const params = { 
     data: { ...getSessionData(req) },
   }
 

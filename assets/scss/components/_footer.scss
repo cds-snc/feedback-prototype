@@ -9,45 +9,6 @@ footer {
   bottom: 0;
   width: 100%;
 
-  .inline-feedback {
-    bottom: $height-footer;
-    max-height: 40px;  
-    transition: max-height 0.3s ease-out;
-
-    .inline-feedback-prompt {
-      padding: $space-xxs $space-md;
-      height: $height-inline-feedback-prompt;
-      background-color: $color-blue-light;
-      font-size: 0.8em;
-
-      * {
-        color: $color-white;
-      }
-    }
-
-    form {
-      display: none;
-    }
-
-    &.expanded {
-      max-height: 400px;
-      border-top: 5px solid $color-blue-light;
-      
-      .inline-feedback-prompt {
-        display: none;
-      }
-
-      form {
-        display: block;
-
-        .close {
-          color: #000 !important;
-          margin-left: 80%;
-        }
-      }
-    }
-  }
-
   .footer-links {
     font-size: 0.85em;
 
