@@ -6,7 +6,6 @@ module.exports = (env, argv) => {
     mode: argv.mode,
     entry: {
       styles: './assets/scss/app.scss',
-      inlineFeedback: './plugins/feedback/js/index.js',
       personal: './routes/personal/js/personal.js',
     },
     output: {
