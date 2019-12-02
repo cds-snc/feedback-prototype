@@ -2,18 +2,18 @@
     <div class="inline-feedback-wrapper px-4 mx-auto my-0 max-w-4xl">
         <div class=inline-feedback-prompt>
             {% block outerTitle %}
-            <a class="open" href="#">Is something wrong?</a>
+            <a class="open" href="#">{{ __("inline-feedback.footer-expand-link") }}</a>
             {% endblock %}
         </div>
         <form class="md:relative md:m-0 md:pb-4" method="post" action="https://us-central1-notification-demo-service.cloudfunctions.net/send?id=ZjzwrTxcUKlAU8GBguRt">
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
-            <a class="close md:absolute md:top-0 md:right-0 text-lg" href="#">Close</a>
+            <a class="close md:absolute md:top-0 md:right-0 text-lg" href="#">{{ __("inline-feedback.close") }}</a>
             {% block innerTitle %}
-            <h1 class="md:mt-10">Is something wrong?</h1>
+            <h1 class="md:mt-10">{{ __("inline-feedback.title") }}</h1>
             {% endblock %}
             {% block topMatter %}
-            <p class="mt-8 text-xl">If you need help from a person… [insert info here]</p>
-            <p class="mt-1 mb-10 text-xl">If you need this information in another format like large-print, Braille or audio, [contact…]</p>
+            <p class="mt-8 text-xl">{{ __("inline-feedback.contact-1") }}</p>
+            <p class="mt-1 mb-10 text-xl">{{ __("inline-feedback.contact-2") }}</p>
             {% endblock %}
             {% block questions %}
             {{ checkBoxes('feedback_type', 
@@ -33,7 +33,7 @@
             {{ textArea('feedback_text', 'form.midservice_feedback.text', { hint: 'form.midservice_feedback.text.hint' }) }}
             {% endblock %}
             {% block submit %}
-            <button type="submit" class="w-auto mb-10">Submit &#8594;</button>
+            <button type="submit" class="w-auto mb-10">{{ __("inline-feedback.submit") }} &#8594;</button>
             {% endblock %}
         </form>
     </div>

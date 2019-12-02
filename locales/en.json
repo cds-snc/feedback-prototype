@@ -88,5 +88,11 @@
   "form.would_you_use_service_again": "Would you use this service again, if you have to [insert task] in the future?",
   "form.hard_easy_hint": "On a scale of 1 to 5 (1 is very hard and 5 is very easy)",
   "back": "Go back",
-  "You could not complete [product-specific service/task]": "You could not complete [product-specific service/task]"
+  "You could not complete [product-specific service/task]": "You could not complete [product-specific service/task]",
+  "inline-feedback.title": "Is something wrong?",
+  "inline-feedback.contact-1": "If you need help from a person… [insert info here]",
+  "inline-feedback.contact-2": "If you need this information in another format like large-print, Braille or audio, [contact…]",
+  "inline-feedback.close": "Close",
+  "inline-feedback.footer-expand-link": "Is something wrong?",
+  "inline-feedback.submit": "Submit"
 }
