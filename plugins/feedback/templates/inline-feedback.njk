@@ -3,9 +3,10 @@
         <div class=inline-feedback-prompt>
             {% block outerTitle %}
             <a class="open" href="#">{{ __("inline-feedback.footer-expand-link") }}</a>
+            <h5 class="confirmation mt-1 text-white hidden">Thank you for your feedback</h5>
             {% endblock %}
         </div>
-        <form class="md:relative md:m-0 md:pb-4" method="post" action="https://us-central1-notification-demo-service.cloudfunctions.net/send?id=ZjzwrTxcUKlAU8GBguRt">
+        <form class="md:relative md:m-0 md:pb-4">
             <input type="hidden" name="_csrf" value="{{ csrfToken }}">
             <a class="close md:absolute md:top-0 md:right-0 text-lg" href="#">{{ __("inline-feedback.close") }}</a>
             {% block innerTitle %}
@@ -40,24 +41,65 @@
 </div>
 
 <script>
-    if (typeof Promise !== "function" && document.querySelector('details') !== null) {
-        document.write('<script src="/js/details-element-polyfill.js"><\/script>');
-    }
-    var inlineFeedbackDiv = document.querySelector('.inline-feedback')
-    var inlineFeedbackDivClasses = inlineFeedbackDiv.classList
-    var componentOpenClass = 'expanded'
-    const inlineFeedbackOpenEl = inlineFeedbackDiv.querySelector('a.open')
-    const inlineFeedbackCloseEl = inlineFeedbackDiv.querySelector('a.close')
-
-    inlineFeedbackOpenEl.addEventListener("click", function(e) {	
-        e.preventDefault();	
-        inlineFeedbackDivClasses.add(componentOpenClass);	
-        return false;	
-    });	
-
-    inlineFeedbackCloseEl.addEventListener("click", function(e) {	
-        e.preventDefault();	
-        inlineFeedbackDivClasses.remove(componentOpenClass);	
-        return false;	
+    window.addEventListener("load", function () {
+        const fbkEl = document.querySelector('.inline-feedback'),
+        fbkOpenEl = fbkEl.querySelector('a.open'),
+        fbkCloseEl = fbkEl.querySelector('a.close'),
+        fbkFormEl = fbkEl.querySelector('form'),
+        fbkElClasses = fbkEl.classList,
+        fbkOpenClass = 'expanded';
+        // show component 
+        fbkOpenEl.addEventListener("click", function(e) {
+            e.preventDefault();
+            fbkElClasses.add(fbkOpenClass);
+            return false;
+        });
+        // hide component 
+        fbkCloseEl.addEventListener("click", function(e) {
+            e.preventDefault();
+            fbkElClasses.remove(fbkOpenClass);
+            return false;
+        });
+        // post form data asynchronously 
+        async function sendFeedback(form) {
+            let endPoint, // = "https://cds-feedback-collector.herokuapp.com/en/send?id=",
+            response;
+            
+            const inlineFeedbackConfirmationEl = fbkEl.querySelector('.confirmation'),
+            formData = new FormData(form),
+            jsonFormData = JSON.stringify(Object.fromEntries(formData)),
+            mockResponseHeaders = { "status" : 299, "statusText" : "No endpoint configured" },
+            mockResponse = new Response(null, mockResponseHeaders);
+            if (endPoint === undefined) {
+                response = mockResponse;
+            } else {
+                response = await fetch(endPoint, {
+                    mode: 'cors', 
+                    method: 'POST',
+                    body: jsonFormData,
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                }); 
+            }
+            const responseStatusCode = await response.status;
+            
+            if (response.ok) {
+                fbkCloseEl.click();
+                fbkOpenEl.classList.add('hidden');
+                inlineFeedbackConfirmationEl.classList.remove('hidden');
+                if (responseStatusCode === 299) {
+                    console.warn("Feedback post response status " + responseStatusCode + ": " + response.statusText); 
+                }
+            } else {
+                // form error messages 
+                console.log("Feedback post response status " + responseStatusCode + ": " + response.statusText)
+            }
+        };
+        fbkFormEl.addEventListener("submit", function(e) {
+            e.preventDefault();
+            sendFeedback(this);
+            return false;
+        });
     });
 </script>
