@@ -76,5 +76,7 @@
   "inline-feedback.close": "Fermer",
   "inline-feedback.contact-1": "Si vous avez besoin de l’aide d’une personne… [insert info here]",
   "inline-feedback.contact-2": "Si vous avez besoin d’obtenir le contenu dans un autre format (gros caractères, Braille, audio), [contactez…]",
-  "inline-feedback.submit": "Soumettre"
+  "inline-feedback.submit": "Soumettre",
+  "form.hard_easy_hint": "form.hard_easy_hint",
+  "form.what_problem.text.hint": "Cochez toutes les cases qui s’appliquent à votre situation."
 }
