@@ -6,7 +6,7 @@
     }
     .inline-feedback-prompt {
       background-color: $color-blue-light;
-      a {
+      a, .confirmation {
         color: $color-white;
       }
     }
