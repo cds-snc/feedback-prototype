@@ -8,7 +8,9 @@
         </div>
         <div class="hidden inner-div">
             <div class="sm:flex">
-                <a class="close text-lg flex-none pt-8" href="#">{{ __("inline-feedback.close") }}</a>
+                <div class="flex-none pt-6 text-right w-full sm:w-auto">
+                    <a class="close text-lg" href="#">{{ __("inline-feedback.close") }}</a>
+                </div>
                 {% block innerTitle %}
                 <h1 class="order-first flex-grow">{{ __("inline-feedback.title") }}</h1>
                 {% endblock %}
