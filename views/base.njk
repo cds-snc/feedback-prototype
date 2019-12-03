@@ -34,7 +34,7 @@
 
                 {% block content %}{% endblock %}
             </main>
-            {% include "./../plugins/feedback/templates/inline-feedback.njk" %}
+            {% block feedback %}{% endblock %}
             {% include "_includes/footer.njk" %}
         </div>
     </body>
