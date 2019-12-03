@@ -1,16 +1,18 @@
-<div class="inline-feedback left-0 right-0 bg-white px-4">
+<div class="inline-feedback bg-white px-4">
     <div class="inline-feedback-wrapper mx-auto my-0">
-        <div class="inline-feedback-prompt bg-blue-light px-4">
+        <div class="inline-feedback-prompt px-4">
             {% block outerTitle %}
             <a class="open" href="#">{{ __("inline-feedback.footer-expand-link") }}</a>
             <h5 class="confirmation mt-1 hidden">Thank you for your feedback</h5>
             {% endblock %}
         </div>
         <div class="hidden inner-div">
-            <a class="close md:top-0 md:right-0 text-lg" href="#">{{ __("inline-feedback.close") }}</a>
-            {% block innerTitle %}
-            <h1 class="md:mt-10">{{ __("inline-feedback.title") }}</h1>
-            {% endblock %}
+            <div class="sm:flex">
+                <a class="close text-lg flex-none pt-8" href="#">{{ __("inline-feedback.close") }}</a>
+                {% block innerTitle %}
+                <h1 class="order-first flex-grow">{{ __("inline-feedback.title") }}</h1>
+                {% endblock %}
+            </div>
             {% block topMatter %}
             <p class="mt-8 text-xl">{{ __("inline-feedback.contact-1") }}</p>
             <p class="mt-1 mb-10 text-xl">{{ __("inline-feedback.contact-2") }}</p>
