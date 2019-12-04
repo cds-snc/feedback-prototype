@@ -46,6 +46,20 @@
 </div>
 
 <script>
+    const formDataToObj = function(fd) {
+        let keyCounts = {}, 
+        dataObj = {};
+
+        for(var k of fd.keys()) {
+            keyCounts.hasOwnProperty(k) ? ++keyCounts[k] : keyCounts[k] = 1;
+        }
+
+        for(var k of Object.keys(keyCounts)) {
+            dataObj[k] = (keyCounts[k] > 1) ? fd.getAll(k) : fd.get(k);
+        }
+        return dataObj;
+    };
+
     window.addEventListener("load", function () {
         const fbkEl = document.querySelector('.inline-feedback'),
         fbkOpenEl = fbkEl.querySelector('a.open'),
@@ -72,7 +86,7 @@
             
             const inlineFeedbackConfirmationEl = fbkEl.querySelector('.confirmation'),
             formData = new FormData(form),
-            jsonFormData = JSON.stringify(Object.fromEntries(formData)),
+            jsonFormData = JSON.stringify(formDataToObj(formData)),
             mockResponseHeaders = { "status" : 299, "statusText" : "No endpoint configured" },
             mockResponse = new Response(null, mockResponseHeaders);
             if (endPoint === undefined) {
